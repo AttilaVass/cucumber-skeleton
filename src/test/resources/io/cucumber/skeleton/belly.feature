@@ -1,6 +1,6 @@
 Feature: Belly
 
-  Scenario: a few cukes
-    Given I have 42 cukes in my belly
+  Scenario: MAS - Choose your doctor page
+    Given I navigate to "https://mydoctor.kaiserpermanente.org/mas/mdo/choose-your-doctor/"
     When I wait 1 hour
     Then my belly should growl

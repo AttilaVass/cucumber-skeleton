@@ -1,13 +1,20 @@
 package io.cucumber.skeleton;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class StepDefinitions {
-    @Given("I have {int} cukes in my belly")
-    public void I_have_cukes_in_my_belly(int cukes) throws Throwable {
-        Belly belly = new Belly();
-        belly.eat(cukes);
+
+
+    WebDriver driver = new ChromeDriver();
+
+    @Given("I navigate to {string}")
+    public void I_navigate_to(String url) {
+        driver.navigate().to(url);
     }
+
 
     @When("I wait {int} hour")
     public void i_wait_hour(Integer int1) {
@@ -20,5 +27,12 @@ public class StepDefinitions {
         // Write code here that turns the phrase above into concrete actions
 
     }
+
+    @After
+        public void afterScenario(){
+        System.out.println("this will run after scenario");
+        driver.close();
+    }
+
 
 }
